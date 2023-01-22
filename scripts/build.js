@@ -46,7 +46,7 @@ let transform = {
       .replace('export function render', 'module.exports = function render')
   },
   solid: (svg, componentName, format) => (
-    `import { JSX } from 'solid-js';const ${componentName} = ({...props}) => (${ svg.replace(/^<(.+) /, '<$1 {...props} ') });export default ${componentName};`
+    `import { JSX } from 'solid-js';const ${componentName} = ({...props}) => (${ svg.replace(/^<(\w+) /, '<$1 {...props} ') });export default ${componentName};`
   ),
 }
 
