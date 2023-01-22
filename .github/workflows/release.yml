@@ -41,6 +41,9 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm install
 
+      - name: Build
+        run: npm run build-solid
+
       - name: Calculate environment variables
         run: |
           echo "RELEASE_CHANNEL=$(npm run release-channel --silent)" >> $GITHUB_ENV
